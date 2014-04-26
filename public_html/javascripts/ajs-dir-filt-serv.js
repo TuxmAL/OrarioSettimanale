@@ -8,9 +8,12 @@ angular.module('OrarioSett.filters', []).
     };
   }]).
   filter('pad' , function(){
-   return function(value, padding){
-	 var pad_string = '0'.concat(padding);
-	 return (angular.isDefined(value) && (value !== null) && !isNaN(value))? (pad_string.concat(value)).slice(-2): '-';
+    return function(value, padding){
+      var pad_string = "";
+      for (var i = 0; i < padding ; i++) {
+        pad_string = '0'.concat(pad_string);
+      }
+      return (angular.isDefined(value) && (value !== null) && !isNaN(value))? (pad_string.concat(value)).slice(-2): '-';
    };
 });
 
