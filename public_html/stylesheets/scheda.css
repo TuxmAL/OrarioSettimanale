@@ -1,0 +1,63 @@
+.aggiornamento {
+  font-size: x-small;
+  font-style: italic;
+  right: 0;
+  text-align: right;
+}
+
+.linguetta {
+    background-color:#F0F0FF;
+    border-top:1px solid #B0C2C8;
+    border-left:1px solid #B0C2C8;
+    border-right:1px solid #B0C2C8;
+    color: #444444;
+    width: 50%; /*350px;*/
+    font-family: sans-serif;
+}
+span.linguetta {
+    border-right:0px;
+}
+
+.evidenzia {
+    font-weight: bold;
+}
+
+.postit {
+    background-color: #fdfdb4;
+    color:red;
+}
+
+div.scheda {
+     border:1px solid #B0C2C8;
+}
+
+div.celle {
+    width: 32%; /*250px;*/
+    max-width: 32%; /*250px;*/
+    min-width: 12%; /*150px;*/
+    float: left;
+    /*margin-left: 2px;*/
+    padding-left: 2px;
+    border-left:1px solid #B0C2C8;
+    border-right:0;
+}
+
+div a {
+    text-decoration: none;
+}
+
+div a:hover {
+    color: #c40e2f;
+    background-color: transparent;
+    
+}
+
+div#cerca.celle {
+    max-width: 48%; /*250px;*/
+    min-width: 48%; /*150px;*/
+    float: left;
+    /*margin-left: 2px;*/
+    padding-left: 2px;
+    border-left:1px solid #B0C2C8;
+    border-right:0px;
+}

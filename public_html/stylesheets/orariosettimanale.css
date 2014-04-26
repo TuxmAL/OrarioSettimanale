@@ -1,0 +1,39 @@
+/* app css stylesheet */
+
+.header {
+  font-size: XX-large;
+  font-variant: small-caps;
+  font-style: oblique;
+  vertical-align: middle;
+  letter-spacing: 6pt;
+  height: 130px;
+  background-color: #FFFFFF;
+}
+
+img#logo {
+  float: left;
+}
+
+.version {
+    letter-spacing: 3px;
+    font-style: italic;
+    color: gray;
+    font-size: small;
+}
+
+/*table { 
+  width: auto;
+}
+*/
+.centrato {
+  text-align: center;
+  
+}
+
+thead > tr> th {  
+  text-align: center;
+} 
+
+tfoot > tr > td {
+  font-weight: bold;
+}

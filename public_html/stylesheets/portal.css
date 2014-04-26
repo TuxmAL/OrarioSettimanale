@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  background-color: white;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+  font-size: 13px;
+  color: black;
+}
+
+h1 {
+  font-size: 23px;
+  color: #000;
+}
+
+a {
+  color: #910000;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.ico_nuovo {background-image:url('/images/nuovo.png');}
+.ico_aggiornato {background-image:url('/images/aggiornato.png');}
+
+#page {
+  background-color: white;
+  width: 1000px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 2px solid white;
+}
+
+#content {
+  float: right;
+  background-color: white;
+  border-top: none;
+  padding: 2px;
+  width: 690px;
+}
+
+.footer {
+  clear: both;
+  text-align: center;
+  color: #666666;
+  vertical-align: bottom;
+  font-size: small;
+}
+
+.footer-bar {
+  clear: both;
+  text-align: center;
+  color: #666666;
+  background-color: #eeeeee;
+  vertical-align: bottom;
+  font-size: small;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.footer a {
+  color: #910000;
+  text-decoration: none;
+}
+
+.footer a:hover{
+  color:#000000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#getting-started {
+  margin-left: 5px;
+  padding-right: 0px;
+}
+.header {
+  background-image:url('/images/BannerSUN.png');
+  background-repeat: no-repeat;
+  whidth: 1000px;
+  height: 105px;
+}
+
+.header h1, .header h2 {
+  text-align: center;  
+  margin: 0;
+  color: #910000;
+}
+.header h2 {
+/*  font-weight: normal;*/
+  font-size: 12px;
+}
+
+#getting-started {
+  font-size: 12px;
+}
+
+#getting-started h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+#getting-started h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 5px;
+}
+#getting-started ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#getting-started li {
+  font-size: 18px;
+  color: #303030;
+  margin-bottom: 20px;
+}
+#getting-started li h2 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  color: #333;
+}
+#getting-started li p {
+  color: #555;
+  font-size: 13px;
+}
+
+#search {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 11px;
+}
+#search input {
+  font-size: 11px;
+  margin: 2px;
+}
+
+#search-text {width: 170px}
+
+#sidebar {
+  float: left;
+  width: 299px;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  border-right: 1px solid #aaaaaa;  
+}
+
+#sidebar .content {   
+  padding: 1px;
+  background-color: #CCCCCC;
+  color: #515151;
+}
+
+#sidebar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#sidebar ul h3 {
+  margin-top: 15px;
+  margin-right: 5px;
+  font-size: 14px;
+  border-bottom: 1px solid #910000;
+}
+#sidebar li {
+  list-style-type: none;
+  padding-left: 15px;
+  margin-right: 5px;
+
+}
+#sidebar ul.links li {
+  padding-bottom: 3px;
+  font-size: 11px;
+}
+
+#sidebar ul.links a {
+  color:  #313131; /*whitesmoke;*/
+}
+
+#sidebar li.nuovo {
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#sidebar li.aggiornato {
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#centerbar ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+#centerbar h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  padding-bottom: 05px;
+  border-bottom: 1px solid #ccc;
+}
+#centerbar li {
+  list-style-type: none;
+  padding-left: 16px;
+}
+#centerbar ul.links li {
+  margin-bottom: 5px;
+}
+
+#centerbar li.nuovo {
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#centerbar li.aggiornato {
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+#centerbar .nota {
+  font-size: 11px;
+  color:black;
+}
+
+div.dialog {
+  width: 50em;
+  padding: 0 4em;
+  margin: 4em auto 0 auto;
+  border: 1px solid #c4c4c4;
+}
+
+.no-js {
+  display: none;
+}
+.js {
+  display: inline;
+}

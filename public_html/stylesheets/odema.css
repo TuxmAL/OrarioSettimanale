@@ -1,0 +1,315 @@
+.header {
+  font-size: XX-large;
+  font-variant: small-caps;
+  font-style: oblique;
+  vertical-align: middle;
+  letter-spacing: 6pt;
+  height: 130px;
+  background-color: #FFFFFF;
+  /*background-image: url('/images/BannerSUNnuovo.png');*/
+  /*background-repeat: no-repeat;*/
+}
+
+img#logo {
+  float: left;
+}
+
+div.pdfprint {
+  float: right;
+  font-size: x-small;
+  font-weight: normal;
+}
+
+.version {
+    letter-spacing: 3px;
+    font-style: italic;
+    color: gray;
+    font-size: small;
+}
+
+.message {
+    color: #c40e2f;
+    font-weight: bold;
+    font-size: small;
+}
+
+.filtered {
+    background-image: url('/images/funnel16x16.png');
+    background-repeat: no-repeat;
+    background-position: center center ;
+    color: #c40e2f;
+    font-weight: bold;
+    font-size: small;
+}
+
+.notice {
+    background-image: url('/images/info32x32.png');
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    background-color: #afafff;
+    color: black;
+    margin: 2px 2px 2px 2px;
+    padding-left: 42px;
+    border-color: blue;
+    border-style: solid;
+    font-weight: bold;
+    font-size: small;
+    min-height: 36px;
+    /*color: #c40e2f;*/
+    font-weight: bold;
+    font-size: small;
+}
+
+.warning {
+    background-image: url('/images/warning32x32.png');
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    background-color: #fdfdb4;
+    color: black;
+    margin: 2px 2px 2px 2px;
+    padding-left: 42px;
+    border-color: #f1f11c;
+    border-style: solid;
+    font-weight: bold;
+    font-size: small;
+    min-height: 36px;
+}
+
+.error, .alert {
+    background-image: url('/images/error32x32.png');
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    background-color: #f2b4b4;
+    color: black;
+    margin: 2px 2px 2px 2px;
+    padding-left: 42px;
+    border-color: #d41616;
+    border-style: solid;
+    font-weight: bold;
+    font-size: small;
+    min-height: 36px;
+}
+
+ul.navbar {
+  list-style: none;
+  background-color: #615d5c;
+  border-bottom-color: #c40e2f;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ul.navbar li#normal {
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  font-size: small;
+  color: white;
+}
+
+ul.navbar li#selected {
+  background-image: url('/images/toolbar-select-dark.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+ul.navbar li#home {
+    float: right;
+    border-bottom-style:none;
+    font-weight: bold;
+    font-size: small;
+}
+
+ul.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+ul.navbar a:visited  {
+  text-decoration: none;
+  color: white;
+}
+
+ul.navbar a:hover {
+  text-decoration: none;
+  color: #c40e2f;
+  background-color: #615d5c;
+}
+
+#content {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+textarea.area-testo {
+  vertical-align: text-top;
+}
+
+.numprot {
+    background-color:#F0F0FF;
+    border:1px solid #B0C2C8;
+    color:#444444;
+    font-weight: bold;
+    font-size: small;
+    font-family: sans-serif;
+}
+
+div.elenchi {
+    height: 72px;
+    width: 560px;
+    overflow: auto;
+    border-color: #B0C2C8;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.convalidato, .convalidato a, .convalidato a:visited {
+  color: #000eee;
+}
+.cessato, .cessato a, .cessato a:visited {
+  background-color: #f1f11c;
+}
+.cessato a:hover {
+  background-color: #fdfdb4;
+}
+
+.row-odd {
+  background-color: #d5d5d5;
+}
+
+.row-odd-other {
+  background-color: #e3e3e3;
+}
+
+.row-even {
+  background-color: #c0e7ab;    
+}
+
+.row-even-other {
+  background-color: #d0f8bc;
+}
+
+.proto_number {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+table.elenco {
+  width: 100%;
+  background-color: white;
+  font-weight: bold;
+  font-size: 10pt;
+  border-width: 1px 1px 1px 1px;
+  border-spacing: 0px;
+  border-style: solid solid solid solid;
+  border-color: black black black black;
+  border-collapse: collapse;
+}
+
+table.elenco-stretto {
+  margin-left: auto;margin-right: auto;
+  background-color: white;
+  font-weight: bold;
+  font-size: 10pt;
+  border-width: 1px 1px 1px 1px;
+  border-spacing: 0px;
+  border-style: solid solid solid solid;
+  border-color: black black black black;
+  border-collapse: collapse;
+}
+
+
+table.elenco th, table.elenco-stretto th {
+  vertical-align: middle;
+  background-color: #888888;
+  color: white;
+  white-space: nowrap;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid solid solid solid;
+  border-color: black black black black;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+table.elenco tr#sopra, table.elenco-stretto tr#sopra {
+  border-color: black black black black;
+  border-top-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-width: 0px;
+}
+
+table.elenco td {
+  vertical-align: top;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+table.elenco-stretto td {
+  vertical-align: top;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+table.elenco a
+{
+ text-decoration: none;
+}
+
+table.elenco a:hover
+{
+  color: #c40e2f;
+}
+
+.annullato {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #777777;
+}
+
+.edited {
+  background-color: goldenrod; 
+}
+
+.field-fname {
+  color: #444444;
+  text-align: left;
+  font-weight: bold;
+}
+
+.footer {
+  border-top: 1px solid #c0c0c0;
+  text-align: center;
+  vertical-align: bottom;
+  color: black;
+  background-color: #CCCCCC;
+  font-size: small;
+}
+
+a.footer {
+  color:#B72E0B;
+  text-decoration: none;
+}
+
+a.footer:hover{
+  color:#000000;
+  text-decoration: none;
+  background-color: transparent;
+}

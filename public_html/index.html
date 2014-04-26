@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="it" ng-app="OrarioSett" id="ng-app">
+<head>
+  <meta charset="utf-8">
+  <title>Orario Settimanale</title>
+  <!--[if lte IE 8]>
+    <script src="javascripts/json3.min.js"></script>
+  <![endif]-->  
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet"/>  
+<!--link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <link href="stylesheets/portal.css" rel="stylesheet"/>
+  <link href="stylesheets/orariosettimanale.css" rel="stylesheet"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!--script src="//netdna.bootstrapcdn.com/bootstrap/2.3.1/js/bootstrap.min.js"></script-->
+  <!-- script src="//netdna.bootstrapcdn.com/bootstrap/2.3.1/js/bootstrap-combined.min.js"></script -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap-combined.min.css"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+  <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/i18n/angular-locale_it-it.js"></script-->
+  <!-- script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.min.js"></script -->
+  <script src="javascripts/ui-bootstrap-tpls-0.6.0.js"></script>
+  <script>
+    if (!document.getElementsByClassName) {
+      document.getElementsByClassName = function(clsName) {
+        var retVal = new Array();
+        var elements = document.getElementsByTagName('*');
+        for (var i = 0 ; i < elements.length ; i++) {
+        if (elements[i].className.indexOf(' ') >= 0) {
+          var classes = elements[i].className.split(' ');
+          for(var j = 0;j < classes.length;j++) {
+            if (classes[j] == clsName) {
+              retVal.push(elements[i]);
+              }
+            }
+          } else if (elements[i].className == clsName) {
+                    retVal.push(elements[i]);
+                  }
+        }
+        return retVal;
+      }
+    }
+
+  window.onload =function ()  {
+    document.getElementById('page').style.display = 'none';
+    var els = document.getElementsByClassName('no-js');
+
+    els_len = els.length - 1;
+    for (var idx = els_len; idx >= 0 ; --idx) { 
+      var el = els[idx];
+      el.className = el.className.replace(/\bno-js\b/,'js');
+    }
+  };
+  </script>
+  <style>
+      .no-js {
+        display: none;
+      }
+      .js {
+        display: inline;
+      }
+      div.dialog {
+        width: 50em;
+        padding: 0 4em;
+        margin: 4em auto 0 375px;
+        
+        border: 1px solid #c4c4c4;
+       }     
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div style="position: absolute;vertical-align: baseline; top:50px">
+      <a href="/"><img src="/images/transparent.png" align="bottom" border="0" width="210" height="45"/></a>
+    </div>
+    <br/>
+    <h1>Calcolo dell'Orario<br/>Settimanale<sub><span class="no-js version">v{{'%VERSION%' | interpolate}}</span></sub></h1>
+  </div>
+
+  <div id="page">
+    <img src="images/ruote-dentate-industria-siderurgica.png" border="0" align="left" alt="E' necessario abilitare javascript."/>
+    <div class="dialog">
+      <h1>Hmmm! Non funziona.</h1>
+      <h2>La pagina che stai cercando di visualizzare funziona solo con Javascript abilitato.</h2>
+      <p>Dovresti abilitare javascript per questa pagina, oppure cambiare il browser
+         (o "navigatore", se la parola di prima non ti dice granch&eacute;) con uno pi&ugrave; aggiornato che lo supporti.</p>
+      <a href="/">Torna al portale</a>
+    </div>
+  </div>
+<div class="no-js">   
+<!--[if lte IE 8]>
+<div class="alert alert-error">
+    <h4>Ohib&ograve;!</h4>
+    Con <strong>Internet Explorer 8</strong> o inferiore non funziono bene, lo sai? <small>:'-(</small><br/>
+    Prova ad utilizzarmi in Firefox o Chrome (ma anche Opera; o Safari, se ti capitasse di avere un Apple&reg;).
+  </div>
+<![endif]-->  
+
+  <div contextmenu="menucontesto" ng-controller="TimeTableCtrl">
+    <table class="table table-striped table-condensed" align="center" style="width: auto; border: 1px solid #cccccc">
+      <thead>
+        <tr>
+          <th>Giorno</th>
+          <th>Inizio</th>
+          <th>Fine</th>
+          <th>ico</th>
+          <th style="text-align: center">Pausa<br/>pranzo</th>
+          <th style="text-align: center">Ore<br/>Lavorate</th>
+          <th style="text-align: center">Differenza<br/>E/U</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td colspan="5" style="text-align: right">Totale lavorato</td>
+          <td style="text-align: right">{{totaleLavoratoStringa()}}</td>
+          <td> </td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr ng-repeat="giorno in giornate" class="{{lavorativoFestivo(giorno.lav)}}">
+          <td>{{giorno.gg}}</td>
+          <td><div class="btn-group">
+                <a class="btn btn-primary" href="#"><i class="icon-time"></i></a>
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                  <span class="icon-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a id="ic{{$index}}" href="#"><i class="icon-fixed-width icon-copy"></i> Copia</a></li>
+                  <li><a id="ip{{$index}}" href="#"><i class="icon-fixed-width icon-paste"></i> Incolla</a></li>
+                  <li class="divider"></li>
+                  <li><a id="id{{$index}}" href="#"><i class="icon-fixed-width icon-trash"></i> Cancella</a></li>
+                </ul>
+              </div>    
+                  <button id="i{{$index}}" class="popover-button" popover-placement="right" popover-template="tpl-ingresso.html"><i class="icon-time"></i></button>
+                  {{giorno.ingresso | date:'H.mm' }}
+              </td>
+          <td><button id="u{{$index}}" class="popover-button" popover-placement="right" popover-template="tpl-uscita.html"><i class="icon-time"></i></button> {{giorno.uscita | date:'H.mm' }}</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">{{maturaPausaStringa(giorno)}}</td>
+          <td style="text-align: right"><i class="icon-warning-sign" ng-hide="!allertaInconsistenza(giorno)"></i> <p class="{{allertaInconsistenzaStringa(giorno)}}">{{lavoratoStringa(giorno)}}</p></td>
+          <td style="text-align: right"><p>{{diffOrariaStringa(giorno)}}</p></td>
+        </tr>        
+      </tbody>
+    </table>
+    <script type="text/ng-template" id="tpl-ingresso.html">
+      <div ng-model="giorno.ingresso" ng-change="changed()" class="well well-small" style="display:inline-block;">
+        <timepicker hour-step="1" minute-step="1" show-meridian="false"></timepicker>
+      </div>
+      <button class="btn btn-success" ng-click="giorno.ingresso=get(giorno.ingresso);closePopover('i' + $index);">Imposta</button>
+      <button class="btn btn-danger" ng-click="giorno.ingresso=clear();closePopover('i' + $index);">Cancella</button>
+      <button class="btn btn-close" ng-click="closePopover('i' + $index);">Chiudi</button>
+    </script>
+    <script type="text/ng-template" id="tpl-uscita.html">
+      <div ng-model="giorno.uscita" ng-change="changed()" class="well well-small" style="display:inline-block;">
+        <timepicker hour-step="1" minute-step="1" show-meridian="false"></timepicker>
+      <button class="btn btn-success" ng-click="get();closePopover('u' + $index);">Imposta</button>
+      <button class="btn btn-danger" ng-click="clear();closePopover('u' + $index);">Cancella</button>
+      <button class="btn btn-close" ng-click="closePopover('u' + $index);">Chiudi</button>
+      </div>
+    </script>
+  </div>
+    <menu id="menucontesto" type="context">
+      <menuitem label="Taglia" type="command" onclick="alert('taglia')" class="icon-cut"></menuitem>
+      <menuitem label="Copia" type="command" onclick="alert('copia')" class="icon-copy"></menuitem>
+      <menuitem label="Incolla" type="command" onclick="alert('incolla')"  class="icon-paste"></menuitem>
+    </menu>
+  <div>
+    <p>Si ringrazia <a href="http://glyphicons.com/">Glyphicons</a> per il set di icone.</p>
+    <div class="footer-bar">
+      Progetto, sviluppo e grafica a cura di
+    </div>
+    <div class="footer">
+      TuxmAL
+    </div>  
+  </div>
+  <script src="javascripts/neworariosettimanale.js"></script>
+  <script src="javascripts/ajs-dir-filt-serv.js"></script>
+</div>
+</body>
+</html>

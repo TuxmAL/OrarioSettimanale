@@ -1,0 +1,55 @@
+.sun_pagination {
+  background: #615d5c;
+  color: white;
+  font-weight:bold;
+  font-size: small;
+  /* self-clearing method: */
+}
+  .sun_pagination a, .sun_pagination span {
+    padding: .25em .5em;
+    display: block;
+    float: left;
+}
+  .sun_pagination span.disabled {
+    color: #cccccc;
+    font-weight:normal;
+}
+  .sun_pagination span.current {
+    background-image: url('/images/toolbar-select-dark.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  .sun_pagination a {
+    text-decoration: none;
+    color: #ffffff; /*#105CB6;*/
+  }
+    .sun_pagination a:hover, .sun_pagination a:focus {
+      color: #c40e2f;
+      background-color: #615d5c;
+  }
+  .sun_pagination .page_info {
+    background: #615d5c;
+    color: white;
+    padding: .2em .3em;
+    width: 18em;
+    margin-bottom: .3em;
+    text-align: center;
+      }
+    .sun_pagination .page_info b {
+      color: #003;
+      background: #615d5c;
+      padding: .05em .12em;
+    background-color: #cccccc;
+}
+
+.sun_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .sun_pagination {
+    height: 1%; }
+  *:first-child+html .sun_pagination {
+    overflow: hidden; }
+
